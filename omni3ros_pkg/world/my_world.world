@@ -1,0 +1,3662 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='jersey_barrier'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='upright'>
+          <pose>0 0 0.5715 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.3063 1.143</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.032258 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.8107 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base2'>
+          <pose>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.65 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base3'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left-angle'>
+          <pose>0 -0.224 0.2401 0.9 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right-angle'>
+          <pose>0 0.224 0.2401 -0.9 0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.137479 -2.86961 0 0 -0 0</pose>
+    </model>
+    <model name='jersey_barrier_0'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='upright'>
+          <pose>0 0 0.5715 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.3063 1.143</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.032258 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.8107 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base2'>
+          <pose>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.65 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base3'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left-angle'>
+          <pose>0 -0.224 0.2401 0.9 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right-angle'>
+          <pose>0 0.224 0.2401 -0.9 0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.087169 2.89562 0 0 -0 0</pose>
+    </model>
+    <model name='jersey_barrier_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='upright'>
+          <pose>0 0 0.5715 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.3063 1.143</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.032258 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.8107 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base2'>
+          <pose>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.65 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base3'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left-angle'>
+          <pose>0 -0.224 0.2401 0.9 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right-angle'>
+          <pose>0 0.224 0.2401 -0.9 0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.46846 -0.190956 0 0 -0 0</pose>
+    </model>
+    <model name='jersey_barrier_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://jersey_barrier/meshes/jersey_barrier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='upright'>
+          <pose>0 0 0.5715 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.3063 1.143</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.032258 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.8107 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base2'>
+          <pose>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.65 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base3'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left-angle'>
+          <pose>0 -0.224 0.2401 0.9 -0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right-angle'>
+          <pose>0 0.224 0.2401 -0.9 0 0</pose>
+          <geometry>
+            <box>
+              <size>4.06542 0.5 0.064516</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.34352 -0.026967 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_blue_cylinder'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.67347 2.71805 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_blue_cylinder_0'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.66364 -2.67348 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_blue_cylinder_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.61847 -2.61105 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_blue_cylinder_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_blue_cylinder/meshes/cylinder.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.69452 2.55862 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>866 921000000</sim_time>
+      <real_time>190 424657278</real_time>
+      <wall_time>1634906650 746941416</wall_time>
+      <iterations>102267</iterations>
+      <model name='drc_practice_blue_cylinder'>
+        <pose>-2.68868 2.6602 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.68868 2.6602 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_blue_cylinder_0'>
+        <pose>-2.71134 -2.67348 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.71134 -2.67348 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_blue_cylinder_1'>
+        <pose>2.68311 -2.70266 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.68311 -2.70266 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_blue_cylinder_2'>
+        <pose>2.71281 2.65698 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.71281 2.65698 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='jersey_barrier'>
+        <pose>0.029912 -2.93762 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.029912 -2.93762 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='jersey_barrier_0'>
+        <pose>-0.003474 2.89562 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.003474 2.89562 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='jersey_barrier_1'>
+        <pose>-2.87299 0.02907 0 0 0 -1.5718</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.87299 0.02907 0 0 0 -1.5718</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='jersey_barrier_2'>
+        <pose>2.88573 -0.034531 0 0 0 -1.56779</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.88573 -0.034531 0 0 0 -1.56779</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='open_base'>
+        <pose>1.17889 -1.20188 -2.7e-05 -0.000138 0.000409 1.79493</pose>
+        <scale>1 1 1</scale>
+        <link name='origin_link'>
+          <pose>1.17889 -1.20188 -2.7e-05 -0.000138 0.000409 1.79493</pose>
+          <velocity>-0.007843 0.003267 -0.001448 0.155173 0.195148 0.027002</velocity>
+          <acceleration>-0.14509 -0.052797 -2.2838 -1.97432 1.04002 2.94002</acceleration>
+          <wrench>-0.011408 -0.004151 -0.179574 0 -0 0</wrench>
+        </link>
+        <link name='rim_back_link'>
+          <pose>1.21788 -1.19298 0.019029 1.57106 0.754383 -1.34648</pose>
+          <velocity>-0.004368 0.001349 -0.007811 0.151411 0.20626 0.025635</velocity>
+          <acceleration>-0.157761 0.02601 -12.3593 -0.26528 -1.39063 2.49711</acceleration>
+          <wrench>-0.001318 0.000217 -0.103294 0 -0 0</wrench>
+        </link>
+        <link name='rim_left_link'>
+          <pose>1.16708 -1.24009 0.019035 -1.5713 -0.819721 -0.299108</pose>
+          <velocity>-0.003081 -2.5e-05 -0.005246 0.166743 0.190211 0.029162</velocity>
+          <acceleration>0.008452 -0.09777 -12.5647 -1.95926 -0.357001 1.32504</acceleration>
+          <wrench>7.1e-05 -0.000817 -0.10501 0 -0 0</wrench>
+        </link>
+        <link name='rim_right_link'>
+          <pose>1.15169 -1.17254 0.019006 -1.56972 1.2757 -2.39284</pose>
+          <velocity>-0.004956 -0.000427 0.00838 0.165217 0.206922 0.031218</velocity>
+          <acceleration>-0.238783 -0.118003 17.5387 -2.33177 1.25633 -0.017295</acceleration>
+          <wrench>-0.001996 -0.000986 0.146581 0 -0 0</wrench>
+        </link>
+        <link name='roller_e_rim_back_link'>
+          <pose>1.21472 -1.20383 0.009748 0.54169 -0.553972 0.942339</pose>
+          <velocity>-0.005992 0.002672 -0.00881 0.42701 1.47679 2.61742</velocity>
+          <acceleration>-3.36792 3.27763 -14.9852 -0.750437 1.09123 -0.711034</acceleration>
+          <wrench>-0.003834 0.003731 -0.01706 0 -0 0</wrench>
+        </link>
+        <link name='roller_e_rim_left_link'>
+          <pose>1.17754 -1.23756 0.028937 -2.6175 -0.662885 -1.05388</pose>
+          <velocity>-0.001266 -0.001364 -0.006836 0.415747 0.11342 -0.214055</velocity>
+          <acceleration>3.15995 -3.8011 -14.8663 -2.17384 1.25701 0.91731</acceleration>
+          <wrench>0.003597 -0.004327 -0.016924 0 -0 0</wrench>
+        </link>
+        <link name='roller_e_rim_right_link'>
+          <pose>1.15254 -1.17926 0.006069 1.90834 0.520848 2.49124</pose>
+          <velocity>-0.006932 0.002018 0.010689 -0.600413 -1.39623 0.517588</velocity>
+          <acceleration>-4.84889 4.05338 23.4833 0.757489 -0.416245 -0.720311</acceleration>
+          <wrench>-0.00552 0.004615 0.026735 0 -0 0</wrench>
+        </link>
+        <link name='roller_n_rim_back_link'>
+          <pose>1.21458 -1.20325 0.028901 0.049527 -0.815263 -1.41448</pose>
+          <velocity>-0.002054 -0.000251 -0.008703 -2.90083 -0.569181 1.40612</velocity>
+          <acceleration>3.25573 -3.44864 -14.7625 2.81077 -0.148911 1.78253</acceleration>
+          <wrench>0.003706 -0.003926 -0.016806 0 -0 0</wrench>
+        </link>
+        <link name='roller_n_rim_left_link'>
+          <pose>1.17817 -1.23776 0.009786 2.44958 0.31969 -1.50743</pose>
+          <velocity>-0.004937 0.001843 -0.007011 0.231046 0.17129 0.101546</velocity>
+          <acceleration>-2.98027 3.46186 -15.1807 0.359587 -0.083131 1.05919</acceleration>
+          <wrench>-0.003393 0.003941 -0.017282 0 -0 0</wrench>
+        </link>
+        <link name='roller_n_rim_right_link'>
+          <pose>1.16493 -1.16776 0.015063 0.295168 0.008372 2.29255</pose>
+          <velocity>-0.005444 0.000551 0.006843 -1.74165 -1.21856 0.817422</velocity>
+          <acceleration>-1.51397 1.22108 13.7773 1.1932 0.434581 0.591258</acceleration>
+          <wrench>-0.001724 0.00139 0.015685 0 -0 0</wrench>
+        </link>
+        <link name='roller_ne_rim_back_link'>
+          <pose>1.22626 -1.20496 0.01945 -0.018582 -0.024834 -0.698133</pose>
+          <velocity>-0.003946 0.001495 -0.011382 0.443148 -1.00384 -2.0995</velocity>
+          <acceleration>0.002595 -0.125789 -19.4361 3.02419 -0.004205 -2.14832</acceleration>
+          <wrench>3e-06 -0.000143 -0.022127 0 -0 0</wrench>
+        </link>
+        <link name='roller_ne_rim_left_link'>
+          <pose>1.1784 -1.24934 0.019502 -3.13165 -0.032858 -0.603317</pose>
+          <velocity>-0.002729 0.000242 -0.009008 0.152731 0.196864 0.44413</velocity>
+          <acceleration>0.203113 -0.216887 -19.6901 -0.817526 1.54964 -0.57543</acceleration>
+          <wrench>0.000231 -0.000247 -0.022416 0 -0 0</wrench>
+        </link>
+        <link name='roller_ne_rim_right_link'>
+          <pose>1.15263 -1.16417 0.007037 0.833061 0.790567 1.74487</pose>
+          <velocity>-0.006754 0.001809 0.007096 -0.6082 -1.26873 -0.693577</velocity>
+          <acceleration>-3.8959 4.9287 15.0823 -1.09861 -0.639095 -0.214525</acceleration>
+          <wrench>-0.004435 0.005611 0.01717 0 -0 0</wrench>
+        </link>
+        <link name='roller_nw_rim_back_link'>
+          <pose>1.22315 -1.19135 0.032573 -1.60359 0.330387 0.213481</pose>
+          <velocity>-0.00159 -0.000605 -0.008669 -0.201891 -1.25516 -1.83973</velocity>
+          <acceleration>4.56639 -4.77222 -13.5795 -1.93391 0.463158 3.06284</acceleration>
+          <wrench>0.005199 -0.005433 -0.01546 0 -0 0</wrench>
+        </link>
+        <link name='roller_nw_rim_left_link'>
+          <pose>1.1659 -1.24548 0.0055 -1.60451 -0.075415 1.27388</pose>
+          <velocity>-0.005106 0.001885 -0.007121 0.528833 -0.104245 0.042713</velocity>
+          <acceleration>-3.74121 4.53067 -16.3072 3.01922 0.429239 2.42743</acceleration>
+          <wrench>-0.004259 0.005158 -0.018565 0 -0 0</wrench>
+        </link>
+        <link name='roller_nw_rim_right_link'>
+          <pose>1.15671 -1.16038 0.025384 0.240864 -0.431321 0.215916</pose>
+          <velocity>-0.004154 -0.001411 0.009378 0.768583 -0.19016 -2.15258</velocity>
+          <acceleration>1.91718 -2.5951 20.1252 0.730593 -1.56218 -0.590987</acceleration>
+          <wrench>0.002183 -0.002954 0.022912 0 -0 0</wrench>
+        </link>
+        <link name='roller_s_rim_back_link'>
+          <pose>1.21046 -1.18515 0.009154 2.32518 0.001279 0.225511</pose>
+          <velocity>-0.006595 0.002647 -0.005092 -3.07164 0.180414 -1.37674</velocity>
+          <acceleration>-3.58109 3.51142 -6.97759 -2.42995 -1.55631 -0.114791</acceleration>
+          <wrench>-0.004077 0.003998 -0.007944 0 -0 0</wrench>
+        </link>
+        <link name='roller_s_rim_left_link'>
+          <pose>1.15924 -1.23191 0.028279 -0.699601 -0.29978 -2.20743</pose>
+          <velocity>-0.001478 -0.00165 -0.002224 -0.59047 -0.668412 0.334911</velocity>
+          <acceleration>3.06784 -3.41789 -6.56933 -0.868419 -1.13774 3.04896</acceleration>
+          <wrench>0.003493 -0.003891 -0.007479 0 -0 0</wrench>
+        </link>
+        <link name='roller_s_rim_right_link'>
+          <pose>1.14592 -1.18538 0.022948 -2.85292 0.062084 2.11355</pose>
+          <velocity>-0.003858 -0.00131 0.007266 -1.00399 1.54736 2.5668</velocity>
+          <acceleration>1.12685 -1.64502 14.1138 2.94087 -0.861119 2.16836</acceleration>
+          <wrench>0.001283 -0.001873 0.016068 0 -0 0</wrench>
+        </link>
+        <link name='roller_se_rim_back_link'>
+          <pose>1.22334 -1.19216 0.005492 -1.44718 -1.32369 -3.03733</pose>
+          <velocity>-0.006683 0.003123 -0.010219 0.098821 -0.512966 0.03916</velocity>
+          <acceleration>-3.92572 3.65182 -15.8554 2.44278 1.07177 0.243759</acceleration>
+          <wrench>-0.004469 0.004157 -0.018051 0 -0 0</wrench>
+        </link>
+        <link name='roller_se_rim_left_link'>
+          <pose>1.16502 -1.2452 0.032577 1.5356 -0.220408 1.27903</pose>
+          <velocity>-0.000258 -0.002167 -0.005475 -3.04577 -0.749823 0.138618</velocity>
+          <acceleration>4.55879 -4.96978 -13.3048 1.13215 1.35527 2.99704</acceleration>
+          <wrench>0.00519 -0.005658 -0.015147 0 -0 0</wrench>
+        </link>
+        <link name='roller_se_rim_right_link'>
+          <pose>1.13918 -1.17663 0.012623 -2.88882 -0.424739 0.18723</pose>
+          <velocity>-0.00616 0.000196 0.010103 -0.489086 0.529371 2.36078</velocity>
+          <acceleration>-2.49133 2.31604 19.9336 1.47454 -1.53349 0.888885</acceleration>
+          <wrench>-0.002836 0.002637 0.022693 0 -0 0</wrench>
+        </link>
+        <link name='roller_sw_rim_back_link'>
+          <pose>1.22024 -1.17855 0.018608 -3.11438 -0.014967 -2.41079</pose>
+          <velocity>-0.004841 0.001494 -0.005655 -0.124008 1.40836 2.26313</velocity>
+          <acceleration>-0.379202 0.242558 -7.42671 0.054321 -1.21462 0.998792</acceleration>
+          <wrench>-0.000432 0.000276 -0.008455 0 -0 0</wrench>
+        </link>
+        <link name='roller_sw_rim_left_link'>
+          <pose>1.15252 -1.24135 0.01857 0.025687 0.022794 -2.60398</pose>
+          <velocity>-0.003187 -0.000313 -0.002377 0.1828 0.192691 -0.788452</velocity>
+          <acceleration>-0.177987 0.03115 -7.71533 2.42945 -1.20965 2.35467</acceleration>
+          <wrench>-0.000203 3.5e-05 -0.008784 0 -0 0</wrench>
+        </link>
+        <link name='roller_sw_rim_right_link'>
+          <pose>1.14326 -1.17284 0.030957 -2.09012 -0.321324 2.4973</pose>
+          <velocity>-0.002604 -0.002715 0.009962 0.506932 -1.29739 -0.268161</velocity>
+          <acceleration>3.97488 -4.77522 20.0492 0.451897 0.872482 -1.69348</acceleration>
+          <wrench>0.004525 -0.005436 0.022825 0 -0 0</wrench>
+        </link>
+        <link name='roller_w_rim_back_link'>
+          <pose>1.21033 -1.18457 0.028306 -3.13751 -0.754344 1.78882</pose>
+          <velocity>-0.00279 -0.000378 -0.00474 -0.142479 -0.930182 -2.72254</velocity>
+          <acceleration>2.85921 -3.38356 -6.38487 2.33785 1.50081 0.459814</acceleration>
+          <wrench>0.003255 -0.003852 -0.007269 0 -0 0</wrench>
+        </link>
+        <link name='roller_w_rim_left_link'>
+          <pose>1.15987 -1.23211 0.009128 0.21697 -0.797083 -0.598659</pose>
+          <velocity>-0.005308 0.001364 -0.002428 0.275197 0.163324 -0.090301</velocity>
+          <acceleration>-3.38065 3.45711 -6.87981 -2.80432 -0.903806 -1.77647</acceleration>
+          <wrench>-0.003849 0.003936 -0.007832 0 -0 0</wrench>
+        </link>
+        <link name='roller_w_rim_right_link'>
+          <pose>1.15831 -1.17389 0.031971 -1.00182 1.00058 2.81227</pose>
+          <velocity>-0.002324 -0.002401 0.006773 0.695303 -1.14202 1.9609</velocity>
+          <acceleration>4.36399 -5.0896 14.339 -0.035018 -0.476706 0.337931</acceleration>
+          <wrench>0.004968 -0.005794 0.016324 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='washer'>
+        <pose>0.142901 2.04865 -0.000312 -0.009051 -0.003045 1.9e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.142898 2.04866 0.000688 -0.009051 -0.003045 1.9e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.002565 -0.000766 0.003547 -2.41389 -0.521054 -3.11324</acceleration>
+          <wrench>-3.1e-05 -9e-06 4.3e-05 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='washer_0'>
+        <pose>1.14688 1.02734 -0.000249 -0.00724 -0.002437 1.2e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.14688 1.02735 0.000751 -0.00724 -0.002437 1.2e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.002537 -0.00074 0.003455 -2.43212 -0.560049 -3.11923</acceleration>
+          <wrench>-3.1e-05 -9e-06 4.2e-05 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='washer_1'>
+        <pose>-1.15354 0.088627 -0.000187 -0.005431 -0.001828 7e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-1.15354 0.088632 0.000813 -0.005431 -0.001828 7e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.002548 -0.000732 0.003453 -2.43277 -0.560372 -3.12482</acceleration>
+          <wrench>-3.1e-05 -9e-06 4.2e-05 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='washer_2'>
+        <pose>-0.31092 -1.06645 -0.000125 -0.003623 -0.00122 3e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.310921 -1.06645 0.000875 -0.003623 -0.00122 3e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.002559 -0.000724 0.003452 -2.43334 -0.560774 -3.13041</acceleration>
+          <wrench>-3.1e-05 -9e-06 4.2e-05 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='washer_3'>
+        <pose>1.22763 -1.223 -7.2e-05 -0.001818 -0.000613 1e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.22763 -1.223 0.000928 -0.001818 -0.000613 1e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -9.8 0 -0 0</acceleration>
+          <wrench>-0 -0 -0.11956 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube_7_5cm'>
+        <pose>1.17229 1.22737 -51247.3 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.17229 1.22737 -51247.3 0 -0 0</pose>
+          <velocity>0 0 -1002.22 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.20402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube_7_5cm_0'>
+        <pose>1.83825 -0.631208 -51247.3 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.83825 -0.631208 -51247.3 0 -0 0</pose>
+          <velocity>0 0 -1002.22 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.20402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube_7_5cm_1'>
+        <pose>-0.576981 0.154983 -51247.3 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.576981 0.154983 -51247.3 0 -0 0</pose>
+          <velocity>0 0 -1002.22 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.20402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube_7_5cm_2'>
+        <pose>-0.876419 -1.47241 -51247.3 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.876419 -1.47241 -51247.3 0 -0 0</pose>
+          <velocity>0 0 -1002.22 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.20402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube_7_5cm_3'>
+        <pose>-0.29107 1.80992 -51247 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.29107 1.80992 -51246.9 0 -0 0</pose>
+          <velocity>0 0 -1002.21 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.20402 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <model name='wood_cube_7_5cm'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.2249</mass>
+          <inertia>
+            <ixx>0.000210844</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000210844</iyy>
+            <iyz>0</iyz>
+            <izz>0.000210844</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.17229 1.22737 0 0 -0 0</pose>
+    </model>
+    <model name='wood_cube_7_5cm_0'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.2249</mass>
+          <inertia>
+            <ixx>0.000210844</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000210844</iyy>
+            <iyz>0</iyz>
+            <izz>0.000210844</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.83825 -0.631208 0 0 -0 0</pose>
+    </model>
+    <model name='wood_cube_7_5cm_1'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.2249</mass>
+          <inertia>
+            <ixx>0.000210844</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000210844</iyy>
+            <iyz>0</iyz>
+            <izz>0.000210844</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.576981 0.154983 0 0 -0 0</pose>
+    </model>
+    <model name='wood_cube_7_5cm_2'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.2249</mass>
+          <inertia>
+            <ixx>0.000210844</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000210844</iyy>
+            <iyz>0</iyz>
+            <izz>0.000210844</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.876419 -1.47241 0 0 -0 0</pose>
+    </model>
+    <model name='wood_cube_7_5cm_3'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.2249</mass>
+          <inertia>
+            <ixx>0.000210844</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000210844</iyy>
+            <iyz>0</iyz>
+            <izz>0.000210844</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.29107 1.80992 0 0 -0 0</pose>
+    </model>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-1.50547 -1.62251 11.9742 0 1.5308 0.015997</pose>
+        <view_controller>ortho</view_controller>
+        <projection_type>orthographic</projection_type>
+      </camera>
+    </gui>
+    <model name='open_base'>
+      <link name='origin_link'>
+        <inertial>
+          <pose>0 0 0.01905 0 -0 0</pose>
+          <mass>0.0786294</mass>
+          <inertia>
+            <ixx>2.03599e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.03599e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.94596e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='origin_link_fixed_joint_lump__base_link_collision'>
+          <pose>0 0 0.01905 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/base.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='origin_link_fixed_joint_lump__base_link_visual'>
+          <pose>0 0 0.01905 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/base.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rim_back_joint' type='revolute'>
+        <pose relative_to='origin_link'>0 -0.04 0.01905 1.5708 -0 3.14159</pose>
+        <parent>origin_link</parent>
+        <child>rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='rim_back_link'>
+        <pose relative_to='rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 -0.000343 0 -0 0</pose>
+          <mass>0.00835758</mass>
+          <inertia>
+            <ixx>6.63684e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6.63684e-07</iyy>
+            <iyz>0</iyz>
+            <izz>9.40333e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Green</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_e_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>0.01355 0 0.0055 -1.5708 0 0</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_e_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_e_rim_back_link'>
+        <pose relative_to='roller_e_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_e_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_e_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_n_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>0 0.01355 0.0055 -1.5708 0 1.5708</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_n_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_n_rim_back_link'>
+        <pose relative_to='roller_n_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_n_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_n_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_ne_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>0.009581 0.009581 -0.0055 -1.5708 -0 0.785398</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_ne_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_ne_rim_back_link'>
+        <pose relative_to='roller_ne_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_ne_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_ne_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_nw_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>-0.009581 0.009581 -0.0055 -1.5708 -0 2.35619</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_nw_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_nw_rim_back_link'>
+        <pose relative_to='roller_nw_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_nw_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_nw_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_s_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>0 -0.01355 0.0055 -1.5708 -0 -1.5708</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_s_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_s_rim_back_link'>
+        <pose relative_to='roller_s_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_s_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_s_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_se_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>0.009581 -0.009581 -0.0055 -1.5708 0 -0.785398</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_se_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_se_rim_back_link'>
+        <pose relative_to='roller_se_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_se_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_se_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_sw_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>-0.009581 -0.009581 -0.0055 -1.5708 -0 -2.35619</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_sw_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_sw_rim_back_link'>
+        <pose relative_to='roller_sw_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_sw_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_sw_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_w_rim_back_joint' type='revolute'>
+        <pose relative_to='rim_back_link'>-0.01355 0 0.0055 -1.5708 -0 3.14159</pose>
+        <parent>rim_back_link</parent>
+        <child>roller_w_rim_back_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_w_rim_back_link'>
+        <pose relative_to='roller_w_rim_back_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_w_rim_back_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_w_rim_back_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rim_left_joint' type='revolute'>
+        <pose relative_to='origin_link'>-0.034641 0.02 0.01905 1.5708 -0 1.0472</pose>
+        <parent>origin_link</parent>
+        <child>rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='rim_left_link'>
+        <pose relative_to='rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 -0.000343 0 -0 0</pose>
+          <mass>0.00835758</mass>
+          <inertia>
+            <ixx>6.63684e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6.63684e-07</iyy>
+            <iyz>0</iyz>
+            <izz>9.40333e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_e_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>0.01355 0 0.0055 -1.5708 0 0</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_e_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_e_rim_left_link'>
+        <pose relative_to='roller_e_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_e_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_e_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_n_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>0 0.01355 0.0055 -1.5708 0 1.5708</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_n_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_n_rim_left_link'>
+        <pose relative_to='roller_n_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_n_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_n_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_ne_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>0.009581 0.009581 -0.0055 -1.5708 -0 0.785398</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_ne_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_ne_rim_left_link'>
+        <pose relative_to='roller_ne_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_ne_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_ne_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_nw_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>-0.009581 0.009581 -0.0055 -1.5708 -0 2.35619</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_nw_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_nw_rim_left_link'>
+        <pose relative_to='roller_nw_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_nw_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_nw_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_s_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>0 -0.01355 0.0055 -1.5708 -0 -1.5708</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_s_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_s_rim_left_link'>
+        <pose relative_to='roller_s_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_s_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_s_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_se_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>0.009581 -0.009581 -0.0055 -1.5708 0 -0.785398</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_se_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_se_rim_left_link'>
+        <pose relative_to='roller_se_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_se_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_se_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_sw_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>-0.009581 -0.009581 -0.0055 -1.5708 -0 -2.35619</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_sw_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_sw_rim_left_link'>
+        <pose relative_to='roller_sw_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_sw_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_sw_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_w_rim_left_joint' type='revolute'>
+        <pose relative_to='rim_left_link'>-0.01355 0 0.0055 -1.5708 -0 3.14159</pose>
+        <parent>rim_left_link</parent>
+        <child>roller_w_rim_left_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_w_rim_left_link'>
+        <pose relative_to='roller_w_rim_left_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_w_rim_left_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_w_rim_left_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rim_right_joint' type='revolute'>
+        <pose relative_to='origin_link'>0.034641 0.02 0.01905 1.5708 -0 -1.0472</pose>
+        <parent>origin_link</parent>
+        <child>rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='rim_right_link'>
+        <pose relative_to='rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 -0.000343 0 -0 0</pose>
+          <mass>0.00835758</mass>
+          <inertia>
+            <ixx>6.63684e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6.63684e-07</iyy>
+            <iyz>0</iyz>
+            <izz>9.40333e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/rim.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_e_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>0.01355 0 0.0055 -1.5708 0 0</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_e_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_e_rim_right_link'>
+        <pose relative_to='roller_e_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_e_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_e_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_n_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>0 0.01355 0.0055 -1.5708 0 1.5708</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_n_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_n_rim_right_link'>
+        <pose relative_to='roller_n_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_n_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_n_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_ne_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>0.009581 0.009581 -0.0055 -1.5708 -0 0.785398</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_ne_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_ne_rim_right_link'>
+        <pose relative_to='roller_ne_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_ne_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_ne_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_nw_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>-0.009581 0.009581 -0.0055 -1.5708 -0 2.35619</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_nw_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_nw_rim_right_link'>
+        <pose relative_to='roller_nw_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_nw_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_nw_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_s_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>0 -0.01355 0.0055 -1.5708 -0 -1.5708</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_s_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_s_rim_right_link'>
+        <pose relative_to='roller_s_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_s_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_s_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_se_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>0.009581 -0.009581 -0.0055 -1.5708 0 -0.785398</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_se_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_se_rim_right_link'>
+        <pose relative_to='roller_se_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_se_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_se_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_sw_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>-0.009581 -0.009581 -0.0055 -1.5708 -0 -2.35619</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_sw_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_sw_rim_right_link'>
+        <pose relative_to='roller_sw_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_sw_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_sw_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='roller_w_rim_right_joint' type='revolute'>
+        <pose relative_to='rim_right_link'>-0.01355 0 0.0055 -1.5708 -0 3.14159</pose>
+        <parent>rim_right_link</parent>
+        <child>roller_w_rim_right_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='roller_w_rim_right_link'>
+        <pose relative_to='roller_w_rim_right_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.00113845</mass>
+          <inertia>
+            <ixx>2.53776e-08</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.53776e-08</iyy>
+            <iyz>0</iyz>
+            <izz>1.47666e-08</izz>
+          </inertia>
+        </inertial>
+        <collision name='roller_w_rim_right_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='roller_w_rim_right_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wcjai/test/src/omni3ros_pkg/mesh/roller.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/open_base</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
+        <alwaysOn>1</alwaysOn>
+        <updateRate>50.0</updateRate>
+        <bodyName>origin_link</bodyName>
+        <topicName>odom</topicName>
+        <gaussianNoise>0.01</gaussianNoise>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <frameName>odom</frameName>
+        <xyzOffsets>0 0 0</xyzOffsets>
+        <rpyOffsets>0 0 0</rpyOffsets>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='washer'>
+      <link name='link'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <inertial>
+          <mass>0.0122</mass>
+          <inertia>
+            <ixx>1.08758e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.08758e-06</iyy>
+            <iyz>0</iyz>
+            <izz>2.16703e-06</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.305</poissons_ratio>
+              <elastic_modulus>2e+11</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.142901 2.04865 0 0 -0 0</pose>
+    </model>
+    <model name='washer_0'>
+      <link name='link'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <inertial>
+          <mass>0.0122</mass>
+          <inertia>
+            <ixx>1.08758e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.08758e-06</iyy>
+            <iyz>0</iyz>
+            <izz>2.16703e-06</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.305</poissons_ratio>
+              <elastic_modulus>2e+11</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.14688 1.02734 0 0 -0 0</pose>
+    </model>
+    <model name='washer_1'>
+      <link name='link'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <inertial>
+          <mass>0.0122</mass>
+          <inertia>
+            <ixx>1.08758e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.08758e-06</iyy>
+            <iyz>0</iyz>
+            <izz>2.16703e-06</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.305</poissons_ratio>
+              <elastic_modulus>2e+11</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.15354 0.088627 0 0 -0 0</pose>
+    </model>
+    <model name='washer_2'>
+      <link name='link'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <inertial>
+          <mass>0.0122</mass>
+          <inertia>
+            <ixx>1.08758e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.08758e-06</iyy>
+            <iyz>0</iyz>
+            <izz>2.16703e-06</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.305</poissons_ratio>
+              <elastic_modulus>2e+11</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.31092 -1.06645 0 0 -0 0</pose>
+    </model>
+    <model name='washer_3'>
+      <link name='link'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <inertial>
+          <mass>0.0122</mass>
+          <inertia>
+            <ixx>1.08758e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.08758e-06</iyy>
+            <iyz>0</iyz>
+            <izz>2.16703e-06</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.305</poissons_ratio>
+              <elastic_modulus>2e+11</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://washer/meshes/washer.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.22763 -1.223 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
