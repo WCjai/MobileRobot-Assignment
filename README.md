@@ -4,7 +4,18 @@ Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
 ## System Requirement 
 * Ubuntu 20.04
 * ROS-Noetic
-### note: This repo uses https://github.com/YugAjmera/omni3ros_pkg repo's modifed simulation. For more Documentation chech that repository
+### note: This repo uses https://github.com/YugAjmera/omni3ros_pkg repo's modifed simulation. For more Documentation chech that repository 
+<br /> <b>And give a vist to there paper as well: </b>
+```
+@inproceedings{mishra2019ego,
+  title={Ego-Centric framework for a three-wheel omni-drive Telepresence robot},
+  author={Mishra, Ruchik and Ajmera, Yug and Mishra, Nikhil and Javed, Arshad},
+  booktitle={2019 IEEE International Conference on Advanced Robotics and its Social Impacts (ARSO)},
+  pages={281--286},
+  year={2019},
+  organization={IEEE}
+}
+```
 
 ## Getstart with Workspace
 Clone the repo in <b>`~/your_workspace_name/src`</b> by
