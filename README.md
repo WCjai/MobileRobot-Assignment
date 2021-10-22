@@ -5,7 +5,7 @@ Mobile Robotics (18MHE458T) Assignment by RA1911038010019
 * ROS-Noetic
 
 ## Getstart with Workspace
-Clone the repo in ~/your_workspace_name/src by
+Clone the repo in <b>~/your_workspace_name/src</b> by
 * git clone https://github.com/WCjai/MobileRobot-Assignment.git
 
 <br />Then use "catkin_make" to complile
