@@ -28,7 +28,7 @@ Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
 <br /><b>https://www.youtube.com/watch?v=NcOT9hOsceE</b>
 
 ## Getstart with Workspace
-Clone the repo in <b>`~/your_workspace_name/src`</b> by
+Clone the repo in <b>`~/your_workspace/src`</b> by
 - `git clone https://github.com/WCjai/MobileRobot-Assignment.git`
 <br /> then use these cmd 
 <br /> `sudo apt-get install ros-neotic-gazebo-config`
