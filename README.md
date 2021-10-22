@@ -17,6 +17,9 @@ Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
 }
 ```
 
+<br /> For <b>kinematic equation</b> refer this video:
+<br /><b>https://www.youtube.com/watch?v=NcOT9hOsceE</b>
+
 ## Getstart with Workspace
 Clone the repo in <b>`~/your_workspace_name/src`</b> by
 - `git clone https://github.com/WCjai/MobileRobot-Assignment.git`
