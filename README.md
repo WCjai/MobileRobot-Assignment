@@ -23,8 +23,11 @@ Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
 ## Getstart with Workspace
 Clone the repo in <b>`~/your_workspace_name/src`</b> by
 - `git clone https://github.com/WCjai/MobileRobot-Assignment.git`
-
+<br /> then use these cmd 
+<br /> `sudo apt-get install ros-neotic-gazebo-config`
+<br /> `sudo apt-get install ros-noetic-velocity-controllers`
 <br />Then use <b>`catkin_make`</b> to complile
+
 
 ## Bringup simulation
 * To bringup simulation use this cmd
