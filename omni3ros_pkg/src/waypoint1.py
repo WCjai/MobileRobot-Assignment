@@ -50,7 +50,7 @@ while not rospy.is_shutdown():
         speed.angular.z = 0.0
         pub.publish(speed)
         point_index += 1
-        print("goal reacher",path_list[point_index - 1])
+        print("goal reached",path_list[point_index - 1])
     else:                
 	     if distance_to_goal >= 0.7: # we'll now head to our target
 	        if abs(angle_to_goal - theta) > 0.5:
