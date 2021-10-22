@@ -1,8 +1,10 @@
 # MobileRobot-Assignment
 Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
+
 ## System Requirement 
 * Ubuntu 20.04
 * ROS-Noetic
+### note: This repo uses https://github.com/YugAjmera/omni3ros_pkg repo's modifed simulation. For more Documentation chech that repository
 
 ## Getstart with Workspace
 Clone the repo in <b>`~/your_workspace_name/src`</b> by
