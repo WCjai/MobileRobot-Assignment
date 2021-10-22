@@ -4,7 +4,7 @@ Mobile Robotics (18MHE458T) Assignment by <b>JAYACHANDRAN(RA1911038010019)</b>
 ## System Requirement 
 * Ubuntu 20.04
 * ROS-Noetic
-### [Note]: This repo uses https://github.com/YugAjmera/omni3ros_pkg repo's modifed simulation. For more Documentation chech that repository 
+### [Note]: This repo uses https://github.com/YugAjmera/omni3ros_pkg repo's modifed simulation. For more Documentation check that repository 
 <br /> <b>And give a vist to there paper as well: </b>
 ```
 @inproceedings{mishra2019ego,
