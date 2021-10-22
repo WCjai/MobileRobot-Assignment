@@ -8,7 +8,7 @@ Mobile Robotics (18MHE458T) Assignment by RA1911038010019
 Clone the repo in <b>~/your_workspace_name/src</b> by
 * git clone https://github.com/WCjai/MobileRobot-Assignment.git
 
-<br />Then use "catkin_make" to complile
+<br />Then use <b>"catkin_make"</b> to complile
 
 ## Bringup simulation
 * To bringup simulation use this cmd
