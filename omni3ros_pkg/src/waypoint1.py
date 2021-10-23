@@ -27,7 +27,7 @@ pub =rospy.Publisher("/cmd_vel",Twist,  queue_size=1)
 speed = Twist()
 
 
-path_list = [(-0, 2), (1,1), (-1,0), (0,-1),(1,-1)]
+path_list = [(-1, 1), (1,1), (1,-1), (-1,-1)]
 point_index = 0  # instead of deleting stuff from a list (which is anyway bug prone) we'll just iterate through it using index variable.
 goal = Point ()
 r = rospy.Rate(1.0)
@@ -57,7 +57,7 @@ while not rospy.is_shutdown():
 	           speed.linear.x = 0.0
 	           speed.angular.z = -0.9   
 	        else:
-	           speed.linear.x = 0.4
+	           speed.linear.x = 0.6
 	           speed.angular.z = 0.0
 	     pub.publish(speed)
 	     
