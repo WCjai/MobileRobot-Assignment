@@ -54,10 +54,10 @@ while not rospy.is_shutdown():
     else:                
 	     if distance_to_goal >= 0.7: # we'll now head to our target
 	        if abs(angle_to_goal - theta) > 0.5:
-	           speed.linear.y = 0.0
+	           speed.linear.x = 0.0
 	           speed.angular.z = -0.9   
 	        else:
-	           speed.linear.y = 0.4
+	           speed.linear.x = 0.4
 	           speed.angular.z = 0.0
 	     pub.publish(speed)
 	     
