@@ -46,7 +46,7 @@ while not rospy.is_shutdown():
     distance_to_goal = np.sqrt(goal.x*goal.x + goal.y*goal.y) 
     point_distance_to_goal = np.sqrt(inc_x*inc_x + inc_y*inc_y)
     if ((goal.x == int(x)) and (goal.y == int (y))):
-        speed.linear.y = 0.0
+        speed.linear.x = 0.0
         speed.angular.z = 0.0
         pub.publish(speed)
         point_index += 1
